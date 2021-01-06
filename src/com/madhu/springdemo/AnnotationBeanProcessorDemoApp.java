@@ -9,7 +9,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * @author Madhukar
  *
  */
-public class AnnotationDemoApp {
+public class AnnotationBeanProcessorDemoApp {
 
 	/**
 	 * @param args
@@ -21,19 +21,12 @@ public class AnnotationDemoApp {
 
 		// get the bean from spring container
 		//Coach theCoach = context.getBean("thatSillyCoach",Coach.class);
-		Coach theCoach = context.getBean("cricketCoach",Coach.class);
-		Coach alphaCoach = context.getBean("cricketCoach",Coach.class);
+		Coach theCoach = context.getBean("kabaddiCoach",Coach.class);
 		
 		// call a method on the bean
-		//System.out.println(theCoach.getDailyWorkout());
-		//System.out.println(theCoach.getDailyFortune());
+		System.out.println(theCoach.getDailyWorkout());
+		System.out.println(theCoach.getDailyFortune());
 		
-		// check if they are the same
-		boolean result = (theCoach == alphaCoach);
-		
-		System.out.println("\nPointing to the same object: "+result);
-		System.out.println("Memory location for theCoach: "+theCoach);
-		System.out.println("Memory location for theCoach: "+alphaCoach);
 		
 		// close the context
 		context.close();
